@@ -8,7 +8,7 @@ const DataProvider = ({children})=>{
   const fetchData = async () => {
     setloading(true)
     try {
-      const res = await axios.get("http://localhost:5000/api/getalldata");
+      const res = await axios.get("https://wor-kout-buddy-server.vercel.app/api/getalldata");
       setData(res.data);
       setloading(false);
     } catch (err) {
@@ -22,7 +22,7 @@ const DataProvider = ({children})=>{
   const deleteData = async(id)=>{
     setloading(true)
     try{
-        const res = await axios.put("http://localhost:5000/api/deletedata", {id});
+        const res = await axios.put("https://wor-kout-buddy-server.vercel.app/api/deletedata", {id});
         if(res.status===200){
           alert("Deleted successfully");
           setloading(false);
